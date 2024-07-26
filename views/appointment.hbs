@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+
+</head>
+<body> 
+    {{#if serverSuccess}}
+    <div class="alert alert-success">{{serverSuccess}}</div>
+    {{/if}}
+
+    {{#if serverError}}
+    <div class="alert alert-danger">{{serverError}}</div>
+    {{/if}}
+    
+    <section id="appointment">
+        <div class="title-text">
+            <p>APPOINTMENT</p>
+            <h1>Book An Appointment Now!</h1>
+        </div>
+        
+        <div class="appointment-box">
+            <form class="appointment-form" action="/appointment" method="POST">        
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="Enter Your Full Name">
+            
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter Your E-mail Id">
+            
+                <label>Contact:</label>
+                <input type="contact" name="contact" placeholder="Enter Contact Number">
+
+                <label>State:</label>
+                <input type="text" name="state" placeholder="Enter Your State">
+                
+                <label>City:</label>
+                <input type="text" name="city" placeholder="Enter Your City">
+            
+                <label>Appointment Date:</label>
+                <input type="date" name="date" placeholder="Select Appointment Date">
+            
+                <label>Appointment Time:</label>
+                <input type="time" name="time" placeholder="Select Appointment Time">
+            
+                <div class="app-div-btn">
+                    <button class="app-btn" type="submit" name="submit">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>
